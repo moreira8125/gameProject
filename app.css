@@ -1,29 +1,91 @@
-body{
+  body {
     background-image: url('https://i.pinimg.com/originals/58/4c/19/584c19801a64c5f5f198b6c441d0cf7e.jpg');
-   background-size: cover;
-   background-repeat: no-repeat;
-   font-family: 'Harry P', sans-serif;
-   color: white;                  
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Harry P', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 #splashScreen {
-    border: 1px solid black;
+    border: 5px solid black;
     display: flex;
-    justify-content: center;
-    margin: 100px auto;
-    height: 60vh;
-    width: 60vw;
-  }
-
-#gameTitle{
-    font-size: 5em;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50vw;
 }
 
-#dobby{
-    color: grey
+#gameTitle {
+    font-size: 5em;
+    margin-bottom: 20px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -6px 1px 0 #000, 1px 1px 0 #000;
+    padding: 20px;
+
+}
+
+#startBtn {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 2em;
+    padding: 25px 35px;
+    font-family: 'Harry P', sans-serif;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    transition: all .25s;
+}
+
+#startBtn:hover{
+    letter-spacing: 15px;
+  }
+
+#dobby {
+    color: grey;
 }
 
 #dobbyImg {
-   
+    height: 12em;
+    align-self: flex-start;
+    margin-bottom: -6px;
 }
+
+#bottomPart {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
+}
+
+#instructions{
+    width: 50%;
+    text-align: center;
+    border: 2px solid black;
+    padding: 0 15px;
+}
+
+#instructionsTitle{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -2px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 2em;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    letter-spacing: 3px;
+}
+
+#instructionsP{
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+#gameObjective{
+    font-size: 1.3em;
+    text-decoration: underline;
+    font-weight: lighter;
+    margin-bottom: 3px;
+    margin-top: 0
+}
+
