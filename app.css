@@ -1,0 +1,29 @@
+body{
+    background-image: url('https://i.pinimg.com/originals/58/4c/19/584c19801a64c5f5f198b6c441d0cf7e.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   font-family: 'Harry P', sans-serif;
+   color: white;                  
+
+}
+
+#splashScreen {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    height: 60vh;
+    width: 60vw;
+  }
+
+#gameTitle{
+    font-size: 5em;
+}
+
+#dobby{
+    color: grey
+}
+
+#dobbyImg {
+   
+}
