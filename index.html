@@ -17,7 +17,7 @@
 
 
         <div id="bottomPart">
-            <img src='images/dobby.png' alt="dobby" id="dobbyImg">
+            <img src='images/dobby.png' alt="dobby" id="dobbyImgStart">
 
             <div id="instructions">
                 <h2 id="instructionsTitle">Instructions</h2>
@@ -31,6 +31,42 @@
             </div>
 
         </div>
+
+    </div>
+
+
+    <div id="gameBoard">
+        <div id="startArea"></div>
+        <div id="gameArea"></div>
+        <div id="finishArea"></div>
+    </div>
+
+
+    <div id='finishScreenVictory'>
+        <h1 id='win'>Congratulations! Dobby is now free thanks to you!</h1>
+        <p id="time">It only took you X seconds</p>
+
+
+        <div id="dobbyDiv">
+            <img src='images/dobby.png' alt="dobby" id="dobbyImgFinish">
+            <button id="playAgain">Play Again!</button>
+
+
+        </div>
+
+    </div>
+
+
+    <div id='finishScreenLose'>
+        <h1 id='lose'>A Dementor caught Dobby! Please Try again.</h1>
+
+
+     <div id="dementorDiv">
+        <img src="images/dementor.png" alt="dementor" id="dementorImg">
+        <button id="playAgain">Play Again!</button>
+    </div>
+
+
     </div>
 
 
@@ -48,11 +84,9 @@
 
 
 
-
-
-
-
-    <script src="index.js"></script>
+    <script src="player.js"></script>
+    <script src="game.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+  /* START SCREEN */
   body {
     background-image: url('https://i.pinimg.com/originals/58/4c/19/584c19801a64c5f5f198b6c441d0cf7e.jpg');
     background-size: cover;
@@ -9,6 +10,8 @@
     align-items: center;
     height: 100vh;
     margin: 0;
+    flex-direction: column;
+
 }
 
 #splashScreen {
@@ -48,7 +51,7 @@
     color: grey;
 }
 
-#dobbyImg {
+#dobbyImgStart {
     height: 12em;
     align-self: flex-start;
     margin-bottom: -6px;
@@ -89,3 +92,153 @@
     margin-top: 0
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* GAME BOARD SCREEN */
+
+#gameBoard{
+    display: none;
+    width: 70vw;
+}
+
+#startArea,
+#gameArea,
+#finishArea{
+    height: 50vh;
+    
+}
+
+#startArea,
+#finishArea{
+    background-color: #890000;
+    opacity: 0.8;
+    width: 15%;
+}
+
+#gameArea{
+    background-color: #ffa700;
+    opacity: 0.5;
+    width: 70%;
+}
+
+
+
+
+
+
+
+
+
+/* FINISH SCREEN VICTORY*/
+
+#finishScreenVictory {
+    border: 5px solid black;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60vw;
+
+}
+
+#win{
+    text-decoration: underline;
+    text-decoration-color: #890000;
+}
+
+#time{
+    font-size: 1.5em;
+    color:#ffa700;
+}
+
+
+#dobbyDiv{
+    display: flex;
+    width: 100%;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#dobbyImgFinish{
+    height: 12em;
+    margin-bottom: -6px;
+}
+
+
+#playAgain{
+    margin-bottom: 20px;
+    display: block;
+    font-size: 2em;
+    padding: 25px 35px;
+    font-family: 'Harry P', sans-serif;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    transition: all .25s;
+    margin-right: 5px;
+}
+
+#playAgain:hover{
+    letter-spacing: 10px;
+  }
+
+
+
+
+
+
+
+
+
+/* FINISH SCREEN LOSE */
+
+#finishScreenLose{
+    border: 5px solid black;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60vw;
+    padding: 50px 0;
+}
+
+#lose{
+    text-decoration: underline;
+    text-decoration-color: #890000;
+    margin-bottom: 50px;
+}
+
+#dementorDiv{
+    display: flex;
+    width: 100%;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#dementorImg{
+    height: 12em;
+    margin-bottom: -6px;
+}
+
+
+
+
+/* PLAYER */
+
+#player{
+    position: absolute;
+    background-color: white;
+}
