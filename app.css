@@ -242,3 +242,7 @@
     position: absolute;
     background-color: white;
 }
+
+#timer{
+    display: none;
+}
