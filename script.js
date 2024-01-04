@@ -3,15 +3,21 @@ window.onload = function () {
   const restartButton = document.getElementById("playAgain");
   let game;
 
-  startButton.addEventListener("click", function () {
+  startButton.addEventListener("click", () => {
     startGame();
   });
 
-  function startGame() {
-    console.log("start game");
-    game = new Game();
+  restartButton.addEventListener("click", () => {
+    restartGame();
+  });
 
+  function startGame() {
+    game = new Game();
     game.start();
+  }
+
+  function restartGame() {
+    location.reload();
   }
 
   window.addEventListener("keydown", (event) => {

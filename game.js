@@ -3,6 +3,7 @@ class Game {
     this.startScreen = document.getElementById("splashScreen");
     this.gameScreen = document.getElementById("gameBoard");
     this.gameArea = document.getElementById("gameArea");
+    this.finishArea = document.getElementById("finishArea");
     this.gameWinScreen = document.getElementById("finishScreenVictory");
     this.gameLoseScreen = document.getElementById("finishScreenLose");
     this.timer = document.getElementById("timer");
@@ -59,7 +60,9 @@ class Game {
       60,
       "images/dementor.png"
     );
+
     this.time = 0;
+    this.timeInterval = null;
   }
 
   start() {
@@ -68,7 +71,8 @@ class Game {
     this.timer.style.display = "block";
 
     this.seconds.innerHTML = this.time;
-    setInterval(() => {
+
+    this.timeInterval = setInterval(() => {
       this.time += 1;
       this.seconds.innerHTML = this.time;
     }, 1000);
@@ -77,12 +81,7 @@ class Game {
   }
 
   gameLoop() {
-    if (this.gameIsOver) {
-      return;
-    }
-
     this.update();
-
     window.requestAnimationFrame(() => this.gameLoop());
   }
 
@@ -96,6 +95,8 @@ class Game {
     this.obstacleTwo.move();
     this.obstacleThree.move();
     this.obstacleFour.move();
+
+    this.victory();
   }
 
   moveObstacleOne() {
@@ -113,7 +114,7 @@ class Game {
       this.obstacleTwo.directionX -= 2;
     }
 
-    if (this.obstacleTwo.left > 390) {
+    if (this.obstacleTwo.left < 390) {
       this.obstacleTwo.directionX += 2;
     }
   }
@@ -133,18 +134,29 @@ class Game {
       this.obstacleFour.directionX -= 2;
     }
 
-    if (this.obstacleFour.left > 390) {
+    if (this.obstacleFour.left < 390) {
       this.obstacleFour.directionX += 2;
     }
   }
+
+  colision() {
+    const player = this.player.getBoundingClientRect();
+    const obstacleOne = this.obstacleOne.getBoundingClientRect();
+    const obstacleTwo = this.obstacleTwo.getBoundingClientRect();
+    const obstacleThree = this.obstacleThree.getBoundingClientRect();
+    const obstacleFour = this.obstacleFour.getBoundingClientRect();
+  }
+
+  victory() {
+    const finishArea = this.finishArea.getBoundingClientRect();
+    const amountOfTime = document.getElementById("time");
+
+    if (this.player.left > finishArea.left) {
+      this.gameScreen.style.display = "none";
+      this.gameWinScreen.style.display = "flex";
+      clearInterval(this.timeInterval);
+      amountOfTime.innerHTML = this.time;
+      this.timer.style.display = "none";
+    }
+  }
 }
-
-// this.obstacles.forEach((element) => {
-//   if (element.left <= 1100) {
-//     element.directionX += 2;
-//   }
-
-//   if (element.left > 390) {
-//     element.directionX -= 2;
-//   }
-// })
