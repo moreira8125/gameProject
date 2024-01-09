@@ -13,9 +13,45 @@ class Game {
       this.gameScreen,
       230,
       330,
-      40,
       50,
+      60,
       "images/dobby.png"
+    );
+
+    this.obstacleOne = new Obstacle(
+      this.gameArea,
+      390,
+      220,
+      60,
+      70,
+      "images/dementor.png"
+    );
+
+    this.obstacleTwo = new Obstacle(
+      this.gameArea,
+      1100,
+      310,
+      60,
+      70,
+      "images/dementor.png"
+    );
+
+    this.obstacleThree = new Obstacle(
+      this.gameArea,
+      390,
+      380,
+      60,
+      70,
+      "images/dementor.png"
+    );
+
+    this.obstacleFour = new Obstacle(
+      this.gameArea,
+      1100,
+      470,
+      60,
+      70,
+      "images/dementor.png"
     );
 
     this.obstacles = [
@@ -25,44 +61,10 @@ class Game {
       this.obstacleFour,
     ];
 
-    this.obstacleOne = new Obstacle(
-      this.gameArea,
-      390,
-      220,
-      50,
-      60,
-      "images/dementor.png"
-    );
-
-    this.obstacleTwo = new Obstacle(
-      this.gameArea,
-      1100,
-      310,
-      50,
-      60,
-      "images/dementor.png"
-    );
-
-    this.obstacleThree = new Obstacle(
-      this.gameArea,
-      390,
-      380,
-      50,
-      60,
-      "images/dementor.png"
-    );
-
-    this.obstacleFour = new Obstacle(
-      this.gameArea,
-      1100,
-      470,
-      50,
-      60,
-      "images/dementor.png"
-    );
-
     this.time = 0;
     this.timeInterval = null;
+    this.animationFrame = null;
+    this.gameInterval = null;
   }
 
   start() {
@@ -77,12 +79,13 @@ class Game {
       this.seconds.innerHTML = this.time;
     }, 1000);
 
-    this.gameLoop();
+    this.gameInterval = setInterval(() => {
+      this.gameLoop();
+    }, 5);
   }
 
   gameLoop() {
     this.update();
-    window.requestAnimationFrame(() => this.gameLoop());
   }
 
   update() {
@@ -97,54 +100,69 @@ class Game {
     this.obstacleFour.move();
 
     this.victory();
+
+    this.obstacles.forEach((element) => {
+      this.colision(element);
+    });
+    console.log("update");
   }
 
   moveObstacleOne() {
     if (this.obstacleOne.left <= 1100) {
-      this.obstacleOne.directionX += 2;
+      this.obstacleOne.directionX += 2.5;
     }
 
     if (this.obstacleOne.left > 390) {
-      this.obstacleOne.directionX -= 2;
+      this.obstacleOne.directionX -= 2.5;
     }
   }
 
   moveObstacleTwo() {
     if (this.obstacleTwo.left >= 1100) {
-      this.obstacleTwo.directionX -= 2;
+      this.obstacleTwo.directionX -= 2.5;
     }
 
     if (this.obstacleTwo.left < 390) {
-      this.obstacleTwo.directionX += 2;
+      this.obstacleTwo.directionX += 2.5;
     }
   }
 
   moveObstacleThree() {
     if (this.obstacleThree.left <= 1100) {
-      this.obstacleThree.directionX += 2;
+      this.obstacleThree.directionX += 2.5;
     }
 
     if (this.obstacleThree.left > 390) {
-      this.obstacleThree.directionX -= 2;
+      this.obstacleThree.directionX -= 2.5;
     }
   }
 
   moveObstacleFour() {
     if (this.obstacleFour.left >= 1100) {
-      this.obstacleFour.directionX -= 2;
+      this.obstacleFour.directionX -= 2.5;
     }
 
     if (this.obstacleFour.left < 390) {
-      this.obstacleFour.directionX += 2;
+      this.obstacleFour.directionX += 2.5;
     }
   }
 
-  colision() {
-    const player = this.player.getBoundingClientRect();
-    const obstacleOne = this.obstacleOne.getBoundingClientRect();
-    const obstacleTwo = this.obstacleTwo.getBoundingClientRect();
-    const obstacleThree = this.obstacleThree.getBoundingClientRect();
-    const obstacleFour = this.obstacleFour.getBoundingClientRect();
+  colision(obstacle) {
+    const player = this.player.element.getBoundingClientRect();
+    const obstacleInstance = obstacle.element.getBoundingClientRect();
+
+    if (
+      player.top < obstacleInstance.bottom &&
+      player.left < obstacleInstance.right &&
+      player.right > obstacleInstance.left &&
+      player.bottom > obstacleInstance.top
+    ) {
+      clearInterval(this.gameInterval);
+      this.gameScreen.style.display = "none";
+      this.gameLoseScreen.style.display = "flex";
+      clearInterval(this.timeInterval);
+      this.timer.style.display = "none";
+    }
   }
 
   victory() {
@@ -152,6 +170,8 @@ class Game {
     const amountOfTime = document.getElementById("time");
 
     if (this.player.left > finishArea.left) {
+      console.log("win");
+      clearInterval(this.gameInterval);
       this.gameScreen.style.display = "none";
       this.gameWinScreen.style.display = "flex";
       clearInterval(this.timeInterval);

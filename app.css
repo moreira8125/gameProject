@@ -92,6 +92,18 @@
     margin-top: 0
 }
 
+#sockContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#sock {
+    height: 200px;
+    
+}
+
 
 
 
@@ -153,8 +165,9 @@
 
 #win{
     text-decoration: underline;
-    text-decoration-color: #890000;
+    text-decoration-color: #333;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -3px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 3em;
 }
 
 #time{
@@ -164,7 +177,7 @@
 }
 
 #howMuchTime{
-    font-size: 1.5em;
+    font-size: 2em;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -3px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -184,7 +197,7 @@
 }
 
 
-#playAgain{
+.playAgain{
     margin-bottom: 20px;
     display: block;
     font-size: 2em;
@@ -197,7 +210,7 @@
     margin-right: 5px;
 }
 
-#playAgain:hover{
+.playAgain:hover{
     letter-spacing: 10px;
   }
 
@@ -218,26 +231,28 @@
     justify-content: flex-start;
     align-items: center;
     width: 60vw;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 #lose{
+    font-size: 3em;
     text-decoration: underline;
-    text-decoration-color: #890000;
+    text-decoration-color: #333;
     margin-bottom: 50px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -3px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #dementorDiv{
     display: flex;
     width: 100%;
-    padding: 0 30px;
+    padding: 0 20px;
     align-items: center;
     justify-content: space-between;
 }
 
 #dementorImg{
-    height: 12em;
-    margin-bottom: -6px;
+    height: 18em;
+    margin-bottom: -15px;
 }
 
 

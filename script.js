@@ -1,13 +1,17 @@
 window.onload = function () {
   const startButton = document.getElementById("startBtn");
-  const restartButton = document.getElementById("playAgain");
+  const restartButton = document.querySelectorAll(".playAgain");
   let game;
 
   startButton.addEventListener("click", () => {
     startGame();
   });
 
-  restartButton.addEventListener("click", () => {
+  restartButton[0].addEventListener("click", () => {
+    restartGame();
+  });
+
+  restartButton[1].addEventListener("click", () => {
     restartGame();
   });
 
@@ -22,16 +26,16 @@ window.onload = function () {
 
   window.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp") {
-      game.player.directionY = -3;
+      game.player.directionY = -1.5;
     }
     if (event.key === "ArrowDown") {
-      game.player.directionY = 3;
+      game.player.directionY = 1.5;
     }
     if (event.key === "ArrowLeft") {
-      game.player.directionX = -3;
+      game.player.directionX = -1.5;
     }
     if (event.key === "ArrowRight") {
-      game.player.directionX = 3;
+      game.player.directionX = 1.5;
     }
   });
 
