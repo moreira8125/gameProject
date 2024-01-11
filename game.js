@@ -22,7 +22,7 @@ class Game {
       this.gameArea,
       390,
       220,
-      60,
+      50,
       70,
       "images/dementor.png"
     );
@@ -31,7 +31,7 @@ class Game {
       this.gameArea,
       1100,
       310,
-      60,
+      50,
       70,
       "images/dementor.png"
     );
@@ -40,7 +40,7 @@ class Game {
       this.gameArea,
       390,
       380,
-      60,
+      50,
       70,
       "images/dementor.png"
     );
@@ -49,7 +49,7 @@ class Game {
       this.gameArea,
       1100,
       470,
-      60,
+      50,
       70,
       "images/dementor.png"
     );
@@ -109,41 +109,41 @@ class Game {
 
   moveObstacleOne() {
     if (this.obstacleOne.left <= 1100) {
-      this.obstacleOne.directionX += 2.5;
+      this.obstacleOne.directionX += 2.3;
     }
 
     if (this.obstacleOne.left > 390) {
-      this.obstacleOne.directionX -= 2.5;
+      this.obstacleOne.directionX -= 2.3;
     }
   }
 
   moveObstacleTwo() {
     if (this.obstacleTwo.left >= 1100) {
-      this.obstacleTwo.directionX -= 2.5;
+      this.obstacleTwo.directionX -= 2.3;
     }
 
     if (this.obstacleTwo.left < 390) {
-      this.obstacleTwo.directionX += 2.5;
+      this.obstacleTwo.directionX += 2.3;
     }
   }
 
   moveObstacleThree() {
     if (this.obstacleThree.left <= 1100) {
-      this.obstacleThree.directionX += 2.5;
+      this.obstacleThree.directionX += 2.3;
     }
 
     if (this.obstacleThree.left > 390) {
-      this.obstacleThree.directionX -= 2.5;
+      this.obstacleThree.directionX -= 2.3;
     }
   }
 
   moveObstacleFour() {
     if (this.obstacleFour.left >= 1100) {
-      this.obstacleFour.directionX -= 2.5;
+      this.obstacleFour.directionX -= 2.3;
     }
 
     if (this.obstacleFour.left < 390) {
-      this.obstacleFour.directionX += 2.5;
+      this.obstacleFour.directionX += 2.3;
     }
   }
 
