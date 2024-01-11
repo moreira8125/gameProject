@@ -26,16 +26,16 @@ window.onload = function () {
 
   window.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp") {
-      game.player.directionY = -1.5;
+      game.player.directionY = -1.8;
     }
     if (event.key === "ArrowDown") {
-      game.player.directionY = 1.5;
+      game.player.directionY = 1.8;
     }
     if (event.key === "ArrowLeft") {
-      game.player.directionX = -1.5;
+      game.player.directionX = -1.8;
     }
     if (event.key === "ArrowRight") {
-      game.player.directionX = 1.5;
+      game.player.directionX = 1.8;
     }
   });
 

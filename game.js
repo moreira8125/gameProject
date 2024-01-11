@@ -11,8 +11,8 @@ class Game {
 
     this.player = new Player(
       this.gameScreen,
-      200,
-      330,
+      230,
+      435,
       60,
       70,
       "images/dobby.png"
@@ -20,37 +20,37 @@ class Game {
 
     this.obstacleOne = new Obstacle(
       this.gameArea,
-      390,
-      220,
+      500,
+      270,
       50,
-      70,
+      80,
       "images/dementor.png"
     );
 
     this.obstacleTwo = new Obstacle(
       this.gameArea,
-      1100,
-      310,
+      1370,
+      380,
       50,
-      70,
+      80,
       "images/dementor.png"
     );
 
     this.obstacleThree = new Obstacle(
       this.gameArea,
-      390,
-      380,
+      500,
+      490,
       50,
-      70,
+      80,
       "images/dementor.png"
     );
 
     this.obstacleFour = new Obstacle(
       this.gameArea,
-      1100,
-      470,
+      1370,
+      600,
       50,
-      70,
+      80,
       "images/dementor.png"
     );
 
@@ -108,42 +108,42 @@ class Game {
   }
 
   moveObstacleOne() {
-    if (this.obstacleOne.left <= 1100) {
-      this.obstacleOne.directionX += 2.3;
+    if (this.obstacleOne.left <= 1370) {
+      this.obstacleOne.directionX += 2.6;
     }
 
-    if (this.obstacleOne.left > 390) {
-      this.obstacleOne.directionX -= 2.3;
+    if (this.obstacleOne.left > 500) {
+      this.obstacleOne.directionX -= 2.6;
     }
   }
 
   moveObstacleTwo() {
-    if (this.obstacleTwo.left >= 1100) {
-      this.obstacleTwo.directionX -= 2.3;
+    if (this.obstacleTwo.left >= 1370) {
+      this.obstacleTwo.directionX -= 2.6;
     }
 
-    if (this.obstacleTwo.left < 390) {
-      this.obstacleTwo.directionX += 2.3;
+    if (this.obstacleTwo.left < 500) {
+      this.obstacleTwo.directionX += 2.6;
     }
   }
 
   moveObstacleThree() {
-    if (this.obstacleThree.left <= 1100) {
-      this.obstacleThree.directionX += 2.3;
+    if (this.obstacleThree.left <= 1370) {
+      this.obstacleThree.directionX += 2.6;
     }
 
-    if (this.obstacleThree.left > 390) {
-      this.obstacleThree.directionX -= 2.3;
+    if (this.obstacleThree.left > 500) {
+      this.obstacleThree.directionX -= 2.6;
     }
   }
 
   moveObstacleFour() {
-    if (this.obstacleFour.left >= 1100) {
-      this.obstacleFour.directionX -= 2.3;
+    if (this.obstacleFour.left >= 1370) {
+      this.obstacleFour.directionX -= 2.6;
     }
 
-    if (this.obstacleFour.left < 390) {
-      this.obstacleFour.directionX += 2.3;
+    if (this.obstacleFour.left < 500) {
+      this.obstacleFour.directionX += 2.6;
     }
   }
 
