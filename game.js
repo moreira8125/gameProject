@@ -11,7 +11,7 @@ class Game {
 
     this.player = new Player(
       this.gameScreen,
-      230,
+      200,
       330,
       50,
       60,
