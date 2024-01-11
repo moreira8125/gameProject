@@ -13,8 +13,8 @@ class Game {
       this.gameScreen,
       200,
       330,
-      50,
       60,
+      70,
       "images/dobby.png"
     );
 
