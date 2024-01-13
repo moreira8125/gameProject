@@ -54,7 +54,7 @@
 #dobbyImgStart {
     height: 12em;
     align-self: flex-start;
-    margin-bottom: -6px;
+    /* margin-bottom: -6px; */
 }
 
 #bottomPart {
@@ -102,6 +102,10 @@
 #sock {
     height: 300px;
     
+}
+
+#music{
+    background-color: transparent;
 }
 
 
