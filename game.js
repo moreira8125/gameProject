@@ -109,41 +109,41 @@ class Game {
 
   moveObstacleOne() {
     if (this.obstacleOne.left <= 1370) {
-      this.obstacleOne.directionX += 2.6;
+      this.obstacleOne.directionX += 3.5;
     }
 
     if (this.obstacleOne.left > 500) {
-      this.obstacleOne.directionX -= 2.6;
+      this.obstacleOne.directionX -= 3.5;
     }
   }
 
   moveObstacleTwo() {
     if (this.obstacleTwo.left >= 1370) {
-      this.obstacleTwo.directionX -= 2.6;
+      this.obstacleTwo.directionX -= 3.5;
     }
 
     if (this.obstacleTwo.left < 500) {
-      this.obstacleTwo.directionX += 2.6;
+      this.obstacleTwo.directionX += 3.5;
     }
   }
 
   moveObstacleThree() {
     if (this.obstacleThree.left <= 1370) {
-      this.obstacleThree.directionX += 2.6;
+      this.obstacleThree.directionX += 3.5;
     }
 
     if (this.obstacleThree.left > 500) {
-      this.obstacleThree.directionX -= 2.6;
+      this.obstacleThree.directionX -= 3.5;
     }
   }
 
   moveObstacleFour() {
     if (this.obstacleFour.left >= 1370) {
-      this.obstacleFour.directionX -= 2.6;
+      this.obstacleFour.directionX -= 3.5;
     }
 
     if (this.obstacleFour.left < 500) {
-      this.obstacleFour.directionX += 2.6;
+      this.obstacleFour.directionX += 3.5;
     }
   }
 
