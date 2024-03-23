@@ -9,62 +9,125 @@ class Game {
     this.timer = document.getElementById("timer");
     this.seconds = document.getElementById("seconds");
 
-    this.player = new Player(
-      this.gameScreen,
-      230,
-      435,
-      60,
-      70,
-      "images/dobby.png"
-    );
+    // EXTRA LARGE SCREENS
+    if (window.innerWidth > 1680) {
+      this.player = new Player(
+        this.gameScreen,
+        230,
+        435,
+        60,
+        70,
+        "images/dobby.png"
+      );
 
-    this.obstacleOne = new Obstacle(
-      this.gameArea,
-      500,
-      270,
-      50,
-      80,
-      "images/dementor.png"
-    );
+      this.obstacleOne = new Obstacle(
+        this.gameArea,
+        490,
+        270,
+        50,
+        80,
+        "images/dementor.png"
+      );
 
-    this.obstacleTwo = new Obstacle(
-      this.gameArea,
-      1370,
-      380,
-      50,
-      80,
-      "images/dementor.png"
-    );
+      this.obstacleTwo = new Obstacle(
+        this.gameArea,
+        1380,
+        380,
+        50,
+        80,
+        "images/dementor.png"
+      );
 
-    this.obstacleThree = new Obstacle(
-      this.gameArea,
-      500,
-      490,
-      50,
-      80,
-      "images/dementor.png"
-    );
+      this.obstacleThree = new Obstacle(
+        this.gameArea,
+        490,
+        490,
+        50,
+        80,
+        "images/dementor.png"
+      );
 
-    this.obstacleFour = new Obstacle(
-      this.gameArea,
-      1370,
-      600,
-      50,
-      80,
-      "images/dementor.png"
-    );
+      this.obstacleFour = new Obstacle(
+        this.gameArea,
+        1380,
+        600,
+        50,
+        80,
+        "images/dementor.png"
+      );
 
-    this.obstacles = [
-      this.obstacleOne,
-      this.obstacleTwo,
-      this.obstacleThree,
-      this.obstacleFour,
-    ];
+      this.obstacles = [
+        this.obstacleOne,
+        this.obstacleTwo,
+        this.obstacleThree,
+        this.obstacleFour,
+      ];
 
-    this.time = 0;
-    this.timeInterval = null;
-    this.animationFrame = null;
-    this.gameInterval = null;
+      this.time = 0;
+      this.timeInterval = null;
+      this.animationFrame = null;
+      this.gameInterval = null;
+    }
+
+    //LARGE SCREENS
+    if (window.innerWidth <= 1680) {
+      this.player = new Player(
+        this.gameScreen,
+        230,
+        420,
+        60,
+        70,
+        "images/dobby.png"
+      );
+
+      this.obstacleOne = new Obstacle(
+        this.gameArea,
+        428,
+        250,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleTwo = new Obstacle(
+        this.gameArea,
+        1205,
+        360,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleThree = new Obstacle(
+        this.gameArea,
+        428,
+        470,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleFour = new Obstacle(
+        this.gameArea,
+        1205,
+        590,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacles = [
+        this.obstacleOne,
+        this.obstacleTwo,
+        this.obstacleThree,
+        this.obstacleFour,
+      ];
+
+      this.time = 0;
+      this.timeInterval = null;
+      this.animationFrame = null;
+      this.gameInterval = null;
+    }
   }
 
   start() {
@@ -108,41 +171,41 @@ class Game {
   }
 
   moveObstacleOne() {
-    if (this.obstacleOne.left <= 1370) {
-      this.obstacleOne.directionX += 3.5;
-    }
+    const obstacleBounds = this.obstacleOne.element.getBoundingClientRect();
 
-    if (this.obstacleOne.left > 500) {
+    if (obstacleBounds.right >= this.finishArea.offsetLeft) {
       this.obstacleOne.directionX -= 3.5;
+    } else if (obstacleBounds.left <= this.gameArea.offsetLeft) {
+      this.obstacleOne.directionX += 3.5;
     }
   }
 
   moveObstacleTwo() {
-    if (this.obstacleTwo.left >= 1370) {
-      this.obstacleTwo.directionX -= 3.5;
-    }
+    const obstacleBounds = this.obstacleTwo.element.getBoundingClientRect();
 
-    if (this.obstacleTwo.left < 500) {
+    if (obstacleBounds.right >= this.finishArea.offsetLeft) {
+      this.obstacleTwo.directionX -= 3.5;
+    } else if (obstacleBounds.left <= this.gameArea.offsetLeft) {
       this.obstacleTwo.directionX += 3.5;
     }
   }
 
   moveObstacleThree() {
-    if (this.obstacleThree.left <= 1370) {
-      this.obstacleThree.directionX += 3.5;
-    }
+    const obstacleBounds = this.obstacleThree.element.getBoundingClientRect();
 
-    if (this.obstacleThree.left > 500) {
+    if (obstacleBounds.right >= this.finishArea.offsetLeft) {
       this.obstacleThree.directionX -= 3.5;
+    } else if (obstacleBounds.left <= this.gameArea.offsetLeft) {
+      this.obstacleThree.directionX += 3.5;
     }
   }
 
   moveObstacleFour() {
-    if (this.obstacleFour.left >= 1370) {
-      this.obstacleFour.directionX -= 3.5;
-    }
+    const obstacleBounds = this.obstacleFour.element.getBoundingClientRect();
 
-    if (this.obstacleFour.left < 500) {
+    if (obstacleBounds.right >= this.finishArea.offsetLeft) {
+      this.obstacleFour.directionX -= 3.5;
+    } else if (obstacleBounds.left <= this.gameArea.offsetLeft) {
       this.obstacleFour.directionX += 3.5;
     }
   }
