@@ -9,7 +9,7 @@ class Game {
     this.timer = document.getElementById("timer");
     this.seconds = document.getElementById("seconds");
 
-    // EXTRA LARGE SCREENS
+    // 1920px
     if (window.innerWidth > 1680) {
       this.player = new Player(
         this.gameScreen,
@@ -69,8 +69,8 @@ class Game {
       this.gameInterval = null;
     }
 
-    //LARGE SCREENS
-    if (window.innerWidth <= 1680) {
+    //1680px
+    if (window.innerWidth <= 1680 && window.innerWidth > 1600) {
       this.player = new Player(
         this.gameScreen,
         230,
@@ -111,6 +111,66 @@ class Game {
         this.gameArea,
         1205,
         590,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacles = [
+        this.obstacleOne,
+        this.obstacleTwo,
+        this.obstacleThree,
+        this.obstacleFour,
+      ];
+
+      this.time = 0;
+      this.timeInterval = null;
+      this.animationFrame = null;
+      this.gameInterval = null;
+    }
+
+    // 1600 PX
+    if (window.innerWidth <= 1600) {
+      this.player = new Player(
+        this.gameScreen,
+        230,
+        400,
+        60,
+        70,
+        "images/dobby.png"
+      );
+
+      this.obstacleOne = new Obstacle(
+        this.gameArea,
+        408,
+        240,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleTwo = new Obstacle(
+        this.gameArea,
+        1145,
+        345,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleThree = new Obstacle(
+        this.gameArea,
+        408,
+        440,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleFour = new Obstacle(
+        this.gameArea,
+        1145,
+        540,
         50,
         80,
         "images/dementor.png"
