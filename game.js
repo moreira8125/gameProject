@@ -130,7 +130,7 @@ class Game {
     }
 
     // 1600 PX
-    if (window.innerWidth <= 1600) {
+    if (window.innerWidth === 1600) {
       this.player = new Player(
         this.gameScreen,
         230,
@@ -173,6 +173,186 @@ class Game {
         540,
         50,
         80,
+        "images/dementor.png"
+      );
+
+      this.obstacles = [
+        this.obstacleOne,
+        this.obstacleTwo,
+        this.obstacleThree,
+        this.obstacleFour,
+      ];
+
+      this.time = 0;
+      this.timeInterval = null;
+      this.animationFrame = null;
+      this.gameInterval = null;
+    }
+
+    //1366
+    if (window.innerWidth === 1366) {
+      this.player = new Player(
+        this.gameScreen,
+        210,
+        380,
+        50,
+        60,
+        "images/dobby.png"
+      );
+
+      this.obstacleOne = new Obstacle(
+        this.gameArea,
+        345,
+        240,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleTwo = new Obstacle(
+        this.gameArea,
+        968,
+        345,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleThree = new Obstacle(
+        this.gameArea,
+        345,
+        440,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacleFour = new Obstacle(
+        this.gameArea,
+        968,
+        540,
+        50,
+        80,
+        "images/dementor.png"
+      );
+
+      this.obstacles = [
+        this.obstacleOne,
+        this.obstacleTwo,
+        this.obstacleThree,
+        this.obstacleFour,
+      ];
+
+      this.time = 0;
+      this.timeInterval = null;
+      this.animationFrame = null;
+      this.gameInterval = null;
+    }
+
+    //1280
+    if (window.innerWidth === 1280) {
+      this.player = new Player(
+        this.gameScreen,
+        150,
+        380,
+        50,
+        60,
+        "images/dobby.png"
+      );
+
+      this.obstacleOne = new Obstacle(
+        this.gameArea,
+        325,
+        240,
+        50,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacleTwo = new Obstacle(
+        this.gameArea,
+        905,
+        345,
+        50,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacleThree = new Obstacle(
+        this.gameArea,
+        325,
+        440,
+        50,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacleFour = new Obstacle(
+        this.gameArea,
+        905,
+        540,
+        50,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacles = [
+        this.obstacleOne,
+        this.obstacleTwo,
+        this.obstacleThree,
+        this.obstacleFour,
+      ];
+
+      this.time = 0;
+      this.timeInterval = null;
+      this.animationFrame = null;
+      this.gameInterval = null;
+    }
+
+    //1024
+    if (window.innerWidth === 1024) {
+      this.player = new Player(
+        this.gameScreen,
+        160,
+        380,
+        40,
+        50,
+        "images/dobby.png"
+      );
+
+      this.obstacleOne = new Obstacle(
+        this.gameArea,
+        261,
+        240,
+        40,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacleTwo = new Obstacle(
+        this.gameArea,
+        725,
+        345,
+        40,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacleThree = new Obstacle(
+        this.gameArea,
+        261,
+        440,
+        40,
+        70,
+        "images/dementor.png"
+      );
+
+      this.obstacleFour = new Obstacle(
+        this.gameArea,
+        725,
+        540,
+        40,
+        70,
         "images/dementor.png"
       );
 

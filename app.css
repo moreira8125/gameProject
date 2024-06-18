@@ -103,6 +103,18 @@
     
 }
 
+@media (max-width: 1366px) {
+    #sock {
+        height: 230px;
+    }
+}
+
+@media (max-width: 1280px) {
+    #sock {
+        height: 200px;
+    }
+}
+
 #music{
     background-color: transparent;
 }
